@@ -53,7 +53,7 @@
 </p>
 
 
-`you can check here` :arrow_right: [assignment-week8](https://kind-rose-haddock-wig.cyclic.app/)
+`you can check here` :arrow_right: [assignment-week8](https://kind-rose-haddock-wig.cyclic.app/spices/)
 
 
 </div>
