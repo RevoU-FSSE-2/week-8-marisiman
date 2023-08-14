@@ -39,7 +39,7 @@ app.get("/spices/:id",(req: Request, res: Response) => {
 
     if (spice.length != 0) {
         res.json({
-            message:"Success get all spices order",
+            message:"Success choice your id spices order",
             spice,
         });   
     } else {
@@ -91,6 +91,7 @@ app.post("/spices", (req: Request, res: Response) => {
 app.put('/spices/:id', (req: Request, res: Response) => {
     const id = parseInt(req.params.id);
     const spicesIndex = spices.findIndex((p) => p.id === id);
+
     if (spicesIndex !== -1) {
         const updatedspices ={
             id,
@@ -100,10 +101,18 @@ app.put('/spices/:id', (req: Request, res: Response) => {
             price: req.body.price,
         };
         spices[spicesIndex] = updatedspices;
-        res.json(updatedspices);
+        res.json({
+            
+            message:"Success put one spices order",
+            updatedspices,
+        });
 
-    } else {
-        res.status(404).json({ message: 'Your Spices is Not Found' });
+    } 
+    
+    else {
+        res.status(404).json({ 
+            message: 'Your Spices is Not Found' 
+        });
     }
 });
 //================== Put new Order spaces ==================//
@@ -115,15 +124,24 @@ app.put('/spices/:id', (req: Request, res: Response) => {
 app.patch('/spices/:id', (req: Request, res: Response) => {
     const id = parseInt(req.params.id);
     const spicesIndex = spices.findIndex((p) => p.id === id);
+
     if (spicesIndex !== -1) {
         const updatedspices = {
             ...spices[spicesIndex],
             ...req.body,
         };
         spices[spicesIndex] = updatedspices;
-        res.json(updatedspices);
-    } else {
-        res.status(404).json({ message: ' Your Spices is Not Found' });
+        res.json({
+        
+        message:"Success change one spices order",
+        updatedspices,
+    });
+    } 
+    
+    else {
+        res.status(404).json({ 
+            message: ' Your Spices is Not Found' 
+        });
     }
 });
 //================== Patch new Order spaces ==================//
@@ -134,66 +152,24 @@ app.patch('/spices/:id', (req: Request, res: Response) => {
 app.delete('/spices/:id', (req: Request, res: Response) => {
     const id = parseInt(req.params.id);
     const spicesIndex = spices.findIndex((p) => p.id === id);
+
     if (spicesIndex !== -1) {
         const deletedspices = spices.splice(spicesIndex, 1)[0];
-        res.json(deletedspices);
-    } else {
-        res.status(404).json({ message: 'Your spices Order is Not Found' });
+        res.json({
+        
+            message:"You deleted one spices order",
+            deletedspices,
+        });
+    } 
+    
+    else {
+        res.status(404).json({ 
+            message: 'Your spices Order is Not Found' 
+        });
     }
 });
 
 //================== Deleted Order spaces ==================//
-
-
-
-// Get All //
-
-app.get("/", (req: Request, res: Response) => {
-
-    res.send("Belajar dulu express");
-});
-
-// Get payments /
-app.get("/payments", (req: Request, res: Response) =>{
-
-    console.log("test method post");
-    res.send("Payment order in here")
-});
-
-// Get Route with Parameter /
-app.get("/payments/:nama_rempah",(req: Request, res: Response) => {
-
-    res.send(`Anda memesan rempah ${req.params.nama_rempah} `);
-});
-
-// Post /
-app.post('/', (req: Request, res: Response) =>{
-
-    console.log("test method post");
-    res.send("Coba lagi ulang")
-});
-
-// Put /
-app.put('/', (req: Request, res: Response) =>{
-
-    console.log("test method post");
-    res.send("Coba PUT")
-});
-
-// Patch /
-app.patch('/', (req: Request, res: Response) =>{
-
-    console.log("test method post");
-    res.send("Coba PATCH")
-});
-
-// Delete /
-app.delete('/', (req: Request, res: Response) =>{
-
-    console.log("test method post");
-    res.send("Coba Delete")
-});
-
 
 
 app.listen(port, () => {

@@ -29,7 +29,7 @@ app.get("/spices/:id", (req, res) => {
     console.log("luar", spice);
     if (spice.length != 0) {
         res.json({
-            message: "Success get all spices order",
+            message: "Success choice your id spices order",
             spice,
         });
     }
@@ -77,10 +77,15 @@ app.put('/spices/:id', (req, res) => {
             price: req.body.price,
         };
         data_1.spices[spicesIndex] = updatedspices;
-        res.json(updatedspices);
+        res.json({
+            message: "Success put one spices order",
+            updatedspices,
+        });
     }
     else {
-        res.status(404).json({ message: 'Your Spices is Not Found' });
+        res.status(404).json({
+            message: 'Your Spices is Not Found'
+        });
     }
 });
 //================== Put new Order spaces ==================//
@@ -91,10 +96,15 @@ app.patch('/spices/:id', (req, res) => {
     if (spicesIndex !== -1) {
         const updatedspices = Object.assign(Object.assign({}, data_1.spices[spicesIndex]), req.body);
         data_1.spices[spicesIndex] = updatedspices;
-        res.json(updatedspices);
+        res.json({
+            message: "Success change one spices order",
+            updatedspices,
+        });
     }
     else {
-        res.status(404).json({ message: ' Your Spices is Not Found' });
+        res.status(404).json({
+            message: ' Your Spices is Not Found'
+        });
     }
 });
 //================== Patch new Order spaces ==================//
@@ -104,46 +114,18 @@ app.delete('/spices/:id', (req, res) => {
     const spicesIndex = data_1.spices.findIndex((p) => p.id === id);
     if (spicesIndex !== -1) {
         const deletedspices = data_1.spices.splice(spicesIndex, 1)[0];
-        res.json(deletedspices);
+        res.json({
+            message: "You deleted one spices order",
+            deletedspices,
+        });
     }
     else {
-        res.status(404).json({ message: 'Financial  is Not Found' });
+        res.status(404).json({
+            message: 'Your spices Order is Not Found'
+        });
     }
 });
 //================== Deleted Order spaces ==================//
-// Get All //
-app.get("/", (req, res) => {
-    res.send("Belajar dulu express");
-});
-// Get payments /
-app.get("/payments", (req, res) => {
-    console.log("test method post");
-    res.send("Payment order in here");
-});
-// Get Route with Parameter /
-app.get("/payments/:nama_rempah", (req, res) => {
-    res.send(`Anda memesan rempah ${req.params.nama_rempah} `);
-});
-// Post /
-app.post('/', (req, res) => {
-    console.log("test method post");
-    res.send("Coba lagi ulang");
-});
-// Put /
-app.put('/', (req, res) => {
-    console.log("test method post");
-    res.send("Coba PUT");
-});
-// Patch /
-app.patch('/', (req, res) => {
-    console.log("test method post");
-    res.send("Coba PATCH");
-});
-// Delete /
-app.delete('/', (req, res) => {
-    console.log("test method post");
-    res.send("Coba Delete");
-});
 app.listen(port, () => {
     console.log(`⚡️[server]: Server is running at http://localhost:${port}`);
 });
