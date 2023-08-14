@@ -138,7 +138,7 @@ app.delete('/spices/:id', (req: Request, res: Response) => {
         const deletedspices = spices.splice(spicesIndex, 1)[0];
         res.json(deletedspices);
     } else {
-        res.status(404).json({ message: 'Financial  is Not Found' });
+        res.status(404).json({ message: 'Your spices Order is Not Found' });
     }
 });
 
