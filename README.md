@@ -5,40 +5,42 @@
 
 
 <div>
-<h2>About Week-7</h2>
+<h2>About Week-8</h2>
 
 <p>Create a simple API Server using Node js, TypeScript, and Express that allows user to perform basic CRUD operation on product implementation.
 </p>
-
-</br>
-  <img src="./assets/image.png" height="408rm" justify-content="center">
-  </br></br>
-  <img src="./assets/image-1.png" height="575rm" justify-content="center">
-
-</br></br>
+ 
+    HTTP Method
+    
+    `POST`: Used for creating new transactions or assets.
+    `GET`: Used for retrieving transactions or assets.
+    `PUT`: Used for updating transactions or assets.
+    `PATCH`: Used for updating partial of transactions or assets.
+    `DELETE`: Used for deleting transactions or assets.
+        
 
 </div>
 
 ### ---
 
 <div>
-<h2>Add More Tools</h2>
+<h2>Add Tools</h2>
 
 <h3>Typescript / JavaScript / ExpressJs</h3>
-<p>Dekstop mode use Dimension value from <b>991 px and up</b>
-</br>@media screen and (max-width: 991px)
-</p>
+<p>If you are here I am assuming you already know what expressJs, javascript, node, and typescript are. I am also assuming that you have node and npm installed. So I will not go in deep about that.</p>
+
 
 <h3>Postman</h3>
-<p>Tablet mode use Dimension with size resposivity in <b>810 x 1080</b> px.
-</br>@media screen and (max-width: 780px)
+<p>Postman is a computer device used by developers as a test application programming interface (API). Makes the developer's job easier by building, testing, and modifying APIs.
 </p>
 
 <h3>Cyclic</h3>
-<p>Mobile mode use Dimension with size resposivity in <b>450 x 915</b> px.
-</br>https://cyclic.sh/
+<p> Build something cool, learn how to start fresh or deploy an existing project with Cyclic.
 </p>
+
 </div>
+
+[cyclic.sh](https://cyclic.sh/)
 
 
 
